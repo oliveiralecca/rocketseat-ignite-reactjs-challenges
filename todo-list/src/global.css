@@ -16,6 +16,10 @@
   --danger: #E25858;
 }
 
+:focus {
+  outline: transparent;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -31,5 +35,6 @@ body {
 body, input, button {
   font-family: 'Inter', sans-serif;
   font-size: 1rem;
+  line-height: 1.4;
   font-weight: 400;
 }
