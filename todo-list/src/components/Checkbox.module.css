@@ -1,0 +1,65 @@
+.container {
+  display: block;
+  position: relative;
+  cursor: pointer;
+
+  margin-top: 0.188rem;
+}
+
+.checkBox {
+  position: absolute;
+
+  opacity: 0;
+  cursor: pointer;
+
+  height: 0;
+  width: 0;
+}
+
+.checkMark {
+  display: block;
+
+  height: 1.094rem;
+  width: 1.094rem;
+
+  border-radius: 50%;
+  border: 2px solid var(--blue);
+}
+
+.container:hover .checkBox ~ .checkMark {
+  background: var(--blue-dark-opacity);
+
+  border: 2px solid var(--blue-dark);
+}
+
+.container .checkBox:checked ~ .checkMark {
+  background: var(--purple-dark);
+  border: 2px solid var(--purple-dark);
+}
+
+.container .checkBox:checked ~ .checkMark:hover {
+  background: var(--purple);
+  border: 2px solid var(--purple);
+}
+
+.checkMark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.container .checkBox:checked ~ .checkMark:after {
+  display: block;
+}
+
+.container .checkMark:after {
+  left: 7px;
+  top: 4px;
+  width: 3px;
+  height: 6px;
+
+  border: solid var(--gray-100);
+  border-width: 0 1px 1px 0;
+
+  transform: rotate(45deg);
+}
