@@ -2,8 +2,11 @@
   background: var(--gray-500);
 
   padding: 1rem;
+  flex: 1;
+
   border: none;
   border-radius: 8px;
+  border: 1px solid var(--gray-700);
 }
 
 .textInput:focus {

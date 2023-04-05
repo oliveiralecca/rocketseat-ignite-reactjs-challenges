@@ -1,10 +1,10 @@
-import styles from './TextInput.module.css';
+import styles from './Input.module.css';
 
-type TextInputProps = {
+type InputProps = {
   placeholder: string;
 };
 
-export function TextInput({ placeholder }: TextInputProps) {
+export function Input({ placeholder }: InputProps) {
   return (
     <input 
       className={styles.textInput} 
