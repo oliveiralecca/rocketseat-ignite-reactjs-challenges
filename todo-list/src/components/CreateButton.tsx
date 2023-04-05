@@ -1,4 +1,3 @@
-import { ReactElement, ReactNode } from "react";
 import { PlusCircle } from "phosphor-react";
 
 import styles from "./CreateButton.module.css";
