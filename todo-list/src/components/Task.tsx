@@ -1,19 +1,30 @@
-import { Checkbox } from './Checkbox';
-import { DeleteButton } from './DeleteButton';
-import styles from './Task.module.css';
+import { Checkbox } from "./Checkbox";
+import { DeleteButton } from "./DeleteButton";
 
-type TaskProps = {};
+import { TasksType } from "../App";
 
-// TODO: aria-disabled -> depende do estado de check
+import styles from "./Task.module.css";
 
-export function Task() {
+type TaskProps = {
+  data: TasksType;
+  onDelete: (id: number) => void;
+  onCheck: (id: number) => void;
+};
+
+export function Task({ data, onDelete, onCheck }: TaskProps) {
   return (
-    <div className={styles.taskContainer} aria-disabled={false}>
+    <div className={styles.taskContainer} aria-disabled={data.isComplete}>
       <div className={styles.infoArea}>
-        <Checkbox />
-        <span>Integer urna interdum massa libero auctor neque turpis turpis semper. Auctor neque turpis turpis semper.</span>
+        <Checkbox 
+          id={data.id} 
+          isChecked={data.isComplete} 
+          onCheck={onCheck}
+        />
+        <span>
+          {data.text}
+        </span>
       </div>
-      <DeleteButton />
+      <DeleteButton taskId={data.id} onDelete={onDelete} />
     </div>
   );
 }

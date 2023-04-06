@@ -1,24 +1,31 @@
 import { useState } from 'react';
 import styles from './Checkbox.module.css';
 
-type CheckboxProps = {};
+type CheckboxProps = {
+  id: number;
+  isChecked: boolean;
+  onCheck: (id: number) => void;
+};
 
-// TODO: id = vem dos dados da task | checked = vem dos dados da task
-// TODO: O onClick vai no span mudando o state de checked
+export function Checkbox({ id, isChecked, onCheck }: CheckboxProps) {
+  const [checked, setChecked] = useState(isChecked);
 
-export function Checkbox() {
-  const [checked, setChecked] = useState(false);
+  function handleCheck() {
+    setChecked(!checked);
+    onCheck(id);
+  }
 
   return (
     <div className={styles.container}>
       <input 
-        id="1"
+        id={id.toString()}
         name="task" 
         type="checkbox" 
         className={styles.checkBox}
         checked={checked} 
+        readOnly
       />
-      <span className={styles.checkMark}></span>
+      <span onClick={handleCheck} className={styles.checkMark}></span>
     </div>
   );
 }
