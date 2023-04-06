@@ -40,7 +40,7 @@ export function App() {
   }
 
   return (
-    <div>
+    <div className={styles.container}>
       <Header />
       <main className={styles.main}>
         <NewTask addNewTask={setTasks} tasks={tasks} />
