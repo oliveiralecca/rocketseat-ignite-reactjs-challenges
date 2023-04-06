@@ -1,0 +1,15 @@
+.emptyContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 4rem 1.5rem;
+  border-radius: 8px;
+
+  border-top: 1px solid var(--gray-400);
+}
+
+.emptyContainer strong {
+  margin-top: 1rem;
+}
